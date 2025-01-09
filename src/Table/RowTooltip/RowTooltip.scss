@@ -1,0 +1,11 @@
+@import "@mixins/mixin";
+
+.iconWrapper {
+    width: 16px;
+
+    color: $Grey;
+
+    &:hover {
+        color: $Blue;
+    }
+}

@@ -1,0 +1,9 @@
+.root {
+    display: flex;
+    flex-direction: row;
+    column-gap: 8px;
+
+    width: 100%;
+    min-width: 350px;
+    max-width: 850px;
+}

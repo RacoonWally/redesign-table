@@ -1,0 +1,26 @@
+@import "@mixins/media";
+
+.root {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    column-gap: 10px;
+
+    margin-bottom: 20px;
+
+    @include media-s {
+        flex-direction: column;
+        row-gap: 10px;
+    }
+}
+
+.rightControls {
+    display: flex;
+    flex-direction: row;
+    column-gap: 12px;
+}
+
+.actions {
+    width: 40px;
+    height: 40px;
+}

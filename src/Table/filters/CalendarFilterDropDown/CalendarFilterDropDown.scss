@@ -1,0 +1,32 @@
+@import '@mixins/mixin';
+
+.root {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+
+    width: 304px;
+    max-height: 600px;
+    padding: 10px 12px 12px 12px;
+}
+
+.search {
+    position: relative;
+
+    width: 100%;
+}
+
+
+.line {
+    align-self: center;
+
+    width: 100%;
+
+    border-top: 1px solid $Grey01;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

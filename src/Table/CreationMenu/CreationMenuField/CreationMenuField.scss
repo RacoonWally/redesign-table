@@ -1,0 +1,40 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+
+.multiFields {
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+
+    width: fit-content;
+}
+
+.fullLineField {
+    column-gap: 28px;
+
+    width: 100%;
+
+    .field {
+        width: unset;
+    }
+}
+
+.noWrapContent {
+    white-space: nowrap;
+}
+
+.columnMultiFields {
+    flex-direction: column;
+    row-gap: 12px;
+}
+
+.field {
+    width: 100%;
+}
+
+.withoutMargin {
+    row-gap: 0;
+}

@@ -1,0 +1,13 @@
+@import "@mixins/mixin";
+
+.root {
+    display: flex;
+    align-items: center;
+
+    white-space: nowrap;
+
+    color: $Grey03;
+
+    font-size: 13px;
+    line-height: 15px;
+}

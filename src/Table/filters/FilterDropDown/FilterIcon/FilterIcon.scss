@@ -1,0 +1,64 @@
+@import '@mixins/mixin';
+
+.root {
+    width: 100%;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 20px;
+    height: 20px;
+
+    color: $Blue03;
+
+    font-size: 15px;
+}
+
+.filteredCount {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 14px;
+    height: 14px;
+
+    color: white;
+    border-radius: 50%;
+    background-color: $Red02;
+
+    font-size: 10px;
+    line-height: 10px;
+}
+
+.filteredIcons {
+    &:hover {
+        .filteredCount {
+            display: none;
+        }
+
+        .hiddenIcon {
+            display: flex;
+        }
+    }
+}
+
+.hiddenIcon {
+    position: relative;
+
+    display: none;
+}
+
+.iconCircle {
+    position: absolute;
+    top: -1px;
+    right: -1px;
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+    background-color: $Red02;
+}

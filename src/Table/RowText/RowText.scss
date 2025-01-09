@@ -1,0 +1,32 @@
+@import "@mixins/mixin";
+
+.root {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 3px;
+
+    white-space: normal;
+}
+
+.root_danger {
+    color: $Red02;
+}
+
+.clickable {
+    cursor: pointer;
+
+    color: $Blue03;
+
+    &:hover {
+        color: $Blue02;
+    }
+}
+
+.minWidth {
+    min-width: 200px;
+}
+
+.prefix {
+    margin-bottom: 1px;
+}

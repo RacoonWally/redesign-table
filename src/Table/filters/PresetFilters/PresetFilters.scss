@@ -1,0 +1,49 @@
+@import "@mixins/mixin";
+
+.root {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 12px;
+    row-gap: 8px;
+
+    width: fit-content;
+}
+
+.button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    column-gap: 8px;
+
+    padding: 6px 8px;
+
+    cursor: pointer;
+
+    color: $Blue03;
+    border-radius: 8px;
+    background-color: white;
+
+    font-size: 12px;
+    line-height: 12px;
+
+    &.highlighted {
+        color: $White;
+        border-color: $Blue012;
+        background-color: #0140bc;
+
+        &:hover {
+            color: $White;
+            border-color: $Blue012;
+            background-color: #0140bc;
+        }
+    }
+
+    &:hover {
+        cursor: pointer;
+
+        color: $Blue03;
+        background-color: $Blue012;
+    }
+}

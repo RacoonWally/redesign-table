@@ -1,0 +1,16 @@
+@import "@mixins/mixin";
+
+.root {
+    column-gap: 8px;
+
+    cursor: pointer;
+
+    color: $Blue03;
+
+    font-size: 13px;
+    line-height: 13px;
+
+    &:hover {
+        color: $Blue02;
+    }
+}

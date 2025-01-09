@@ -1,0 +1,333 @@
+@import '@mixins/mixin';
+@import '@mixins/media';
+
+.redesigned_table_root_container {
+    overflow: hidden;
+
+    width: 100%;
+}
+
+.redesigned_table_root_container__withoutBorderRaduis {
+    border-radius: 0;
+
+    .redesigned_table_component_root {
+        border-radius: 0;
+    }
+}
+
+.redesigned_table_root_container__withMinHeight {
+    .ant-table-body:not(.ant-table-body .ant-table-body) {
+        min-height: var(--redesign-table--min-height, 0);
+    }
+}
+
+.redesigned_table_header {
+    display: flex;
+    flex-direction: row;
+    column-gap: 25px;
+
+    margin-bottom: 12px;
+
+    .ant-table-cell {
+        border: 2px solid $Grey02 !important;
+    }
+}
+
+.redesigned_table_tablePanel {
+    display: flex;
+    flex-direction: row;
+
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.redesigned_table_leftSide {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    row-gap: 12px;
+
+    width: 100%;
+}
+
+.redesigned_table_filtersInfo {
+    display: flex;
+    flex-direction: row;
+    column-gap: 8px;
+}
+
+.redesigned_table_rightSide {
+    display: flex;
+    flex-direction: row;
+    align-self: flex-end;
+    column-gap: 12px;
+}
+
+.redesigned_table_component_root {
+    overflow: auto;
+
+    border-radius: 12px;
+    background-color: white;
+
+    &::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+
+    &::-webkit-scrollbar-corner {
+        background-color: white;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 4px;
+        background-color: #b5b5b5;
+
+        &:hover {
+            cursor: pointer;
+
+            background-color: #878787;
+        }
+    }
+
+    &::-webkit-scrollbar-track {
+        border: none;
+        background-color: transparent;
+    }
+}
+
+.ant-table {
+    border-radius: 12px !important;
+
+    font-family: $RegularFont !important;
+
+    &-wrapper {
+        border-radius: 12px;
+    }
+
+    &-content {
+        border-radius: 12px !important;
+
+        table {
+            table-layout: fixed !important;
+        }
+
+        &::-webkit-scrollbar {
+            left: -100px;
+
+            width: 8px;
+            height: 8px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            border-radius: 4px;
+            background-color: #b5b5b5;
+
+            &:hover {
+                cursor: pointer;
+
+                background-color: #878787;
+            }
+        }
+
+        &::-webkit-scrollbar-track {
+            border: none;
+            background-color: transparent;
+        }
+    }
+
+    &-body {
+        &::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        &::-webkit-scrollbar-corner {
+            background-color: white;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            border-radius: 4px;
+            background-color: #b5b5b5;
+
+            &:hover {
+                cursor: pointer;
+
+                background-color: #878787;
+            }
+        }
+    }
+
+    &-thead {
+        position: sticky;
+        z-index: 1;
+        top: 0;
+    }
+
+    &-thead > tr > &-cell {
+        padding: 10px 2px 7px !important;
+
+        vertical-align: top !important;
+
+        border-bottom: 1px solid $Grey02 !important;
+        border-radius: 0 !important;
+        background-color: white !important;
+
+        &:last-of-type {
+            margin-right: 10px !important;
+        }
+
+        &::before {
+            display: none;
+        }
+    }
+
+    &-thead > tr > th.ant-table-cell {
+        padding: 7px 10px 9px !important;
+
+        font-family: $MediumFont !important;
+        font-size: 12px;
+        line-height: 19px;
+
+        &:first-of-type {
+            padding-left: 12px !important;
+        }
+
+        &:last-of-type {
+            padding-right: 12px !important;
+        }
+
+        &:hover {
+            background-color: $Blue01 !important;
+
+            .ant-table-filter-trigger {
+                display: flex !important;
+            }
+        }
+
+        &:not(&:has(div)) {
+            &:hover {
+                background-color: inherit !important;
+            }
+        }
+    }
+
+    &-thead > tr > th.ant-table-cell.ant-table-column-has-sorters {
+        padding-right: 12px !important;
+    }
+
+    &-tbody > tr > td.ant-table-cell {
+        padding: 12px 10px !important;
+
+        vertical-align: top;
+
+        font-family: $RegularFont !important;
+        font-size: 13px;
+        line-height: 13px;
+
+        &:first-of-type {
+            padding-left: 12px !important;
+        }
+
+        &:last-of-type {
+            padding-right: 12px !important;
+        }
+    }
+
+    .ant-table-footer {
+        padding: 0 !important;
+    }
+
+    &-row-selected {
+        .ant-table-cell {
+            background-color: $Blue012 !important;
+        }
+    }
+
+    &-filter-column {
+        width: 100%;
+        padding-right: 10px;
+    }
+
+    &-column-sorters {
+        column-gap: 10px;
+
+        width: fit-content;
+    }
+
+    &-filter-trigger {
+        display: none !important;
+
+        &:hover {
+            background-color: $Blue012 !important;
+        }
+    }
+
+    &-filter-trigger.active {
+        display: flex !important;
+    }
+
+    &-measure-row {
+        visibility: collapse;
+
+        height: 0;
+    }
+}
+
+.redesigned_table_checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+}
+
+.redesigned_table_row {
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.redesigned_table_footer {
+    display: flex;
+    flex-direction: row;
+
+    margin-top: 15px;
+}
+
+.redesigned_table_danger_row {
+    background-color: $Red01 !important;
+
+    td.ant-table-cell {
+        background-color: $Red01 !important;
+    }
+
+    &:hover {
+        background-color: $Red01 !important;
+        td.ant-table-cell {
+            background-color: $Red01 !important;
+        }
+    }
+}
+
+.redesigned_table_without_row_handlers {
+    cursor: default;
+
+    .ant-table-cell {
+        cursor: default;
+    }
+}
+
+.redesigned_table_grey_row {
+    color-color: $Grey02 !important;
+
+    td.ant-table-cell {
+        color: $Grey02 !important;
+    }
+
+    &:hover {
+        color: $Grey02 !important;
+        td.ant-table-cell {
+            color: $Grey02 !important;
+        }
+    }
+}

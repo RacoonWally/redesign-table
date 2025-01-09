@@ -1,0 +1,25 @@
+@import '@mixins/mixin';
+
+.root {
+    display: flex;
+    flex-direction: row;
+    column-gap: 4px;
+}
+
+.item {
+    padding: 2px 6px 2px 6px;
+
+    border-radius: 4px;
+
+    font-family: $RegularFont;
+    font-size: 13px;
+    line-height: 13px;
+}
+
+.lightGreen {
+    background-color: $Green01;
+}
+
+.lightRed {
+    background-color: $Red01;
+}

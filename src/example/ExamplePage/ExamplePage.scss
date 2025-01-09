@@ -1,0 +1,10 @@
+@import '@mixins/media';
+
+.root {
+    padding-right: 36px;
+
+    @include media-m {
+        padding: 0;
+    }
+}
+

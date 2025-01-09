@@ -1,0 +1,33 @@
+@import "@mixins/mixin";
+
+.root {
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+}
+
+.green {
+    background-color: $Green02;
+}
+
+.red {
+    background-color: $Red02;
+}
+
+.transparent {
+    border: 1px solid $Grey02;
+    background-color: white;
+}
+
+.azure {
+    background-color: $Blue012;
+}
+
+.yellow {
+    background-color: $Yellow02;
+}
+
+.grey {
+    background-color: $Grey02;
+}
