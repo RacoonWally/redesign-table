@@ -1,3 +1,5 @@
+// import { useCallback } from 'react';
+//
 // interface Props {
 //     changeStatus(id: string, status: EntryStatus): Promise<void>;
 //     deleteEntry(id: string): Promise<void>;
@@ -13,59 +15,67 @@
 //     const tDelete = translate('delete');
 //     const tCancel = translate('cancel');
 //     const tAreYouSure = translate('areYouSure');
+//     const tMoveToArchive = translate('moveToArchive');
+//     const tReturnFromArchive = translate('returnFromArchive');
 //
-//     function getMenuItems(record: EntryListParams): CellButtonMenuItem[] {
-//         const menuItems: CellButtonMenuItem[] = [
-//             {
-//                 isHighlighted: true,
-//                 label: translate('delete'),
-//                 dataTest: '',
-//                 onClick: () => onDelete(record.id),
-//             },
-//         ];
-//         switch (record.status) {
-//             case EntryStatus.Archive: {
-//                 menuItems.unshift({
-//                     label: translate('returnFromArchive'),
+//     const getMenuItems = useCallback(
+//         (record: EntryListParams): CellButtonMenuItem[] => {
+//             const menuItems: CellButtonMenuItem[] = [
+//                 {
+//                     isHighlighted: true,
+//                     label: tDelete,
 //                     dataTest: '',
-//                     onClick: async () => changeStatus(record.id, EntryStatus.Draft),
-//                 });
-//                 break;
+//                     onClick: () => onDelete(record.id),
+//                 },
+//             ];
+//
+//             switch (record.status) {
+//                 case EntryStatus.Archive:
+//                     menuItems.unshift({
+//                         label: tReturnFromArchive,
+//                         dataTest: '',
+//                         onClick: async () => changeStatus(record.id, EntryStatus.Draft),
+//                     });
+//                     break;
+//                 case EntryStatus.Draft:
+//                 case EntryStatus.Unsigned:
+//                     menuItems.unshift({
+//                         label: tMoveToArchive,
+//                         dataTest: '',
+//                         onClick: async () => changeStatus(record.id, EntryStatus.Archive),
+//                     });
 //             }
-//             case EntryStatus.Draft:
-//             case EntryStatus.Unsigned: {
-//                 menuItems.unshift({
-//                     label: translate('moveToArchive'),
-//                     dataTest: '',
-//                     onClick: async () => changeStatus(record.id, EntryStatus.Archive),
-//                 });
-//             }
-//         }
 //
-//         return menuItems;
-//     }
+//             return menuItems;
+//         },
+//         [tDelete, tMoveToArchive, tReturnFromArchive, changeStatus]
+//     );
 //
-//     function onDelete(id: string) {
-//         app.showConfirmPopup({
-//             onClose,
-//             description: tAreYouSure,
-//             confirmText: tDelete,
-//             cancelText: tCancel,
-//             modifiers: [PopupModifiers.Redesign],
-//             onCancel: onClose,
-//             onConfirm: () => onConfirm(id),
-//         });
-//     }
+//     const onDelete = useCallback(
+//         (id: string) => {
+//             app.showConfirmPopup({
+//                 onClose,
+//                 description: tAreYouSure,
+//                 confirmText: tDelete,
+//                 cancelText: tCancel,
+//                 modifiers: [PopupModifiers.Redesign],
+//                 onCancel: onClose,
+//                 onConfirm: () => onConfirm(id),
+//             });
+//         },
+//         [app, tAreYouSure, tDelete, tCancel, onConfirm]
+//     );
 //
-//     async function onConfirm(id: string) {
-//         await deleteEntry(id);
-//     }
+//     const onConfirm = useCallback(
+//         async (id: string) => {
+//             await deleteEntry(id);
+//         },
+//         [deleteEntry]
+//     );
 //
-//     function onClose(): void {
-//         const { app } = useStore([AppState.Name]);
-//
+//     const onClose = useCallback(() => {
 //         app.showConfirmPopup(null);
-//     }
+//     }, [app]);
 //
 //     return {
 //         getMenuItems,

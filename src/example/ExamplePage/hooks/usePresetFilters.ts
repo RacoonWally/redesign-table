@@ -10,8 +10,10 @@
 //     const { authUser } = useStore([AuthUser.Name]);
 //     const { getSelectedDoctors } = useAssistantDoctors();
 //     const authorIds = [authUser.id];
-//     // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-//     authUser.isAssistant && getSelectedDoctors().forEach(it => authorIds.push(it.id));
+//
+//     if (authUser.isAssistant) {
+//         getSelectedDoctors().forEach(it => authorIds.push(it.id));
+//     }
 //
 //     const defaultFilters = {
 //         sortingOrder: SortingOrder.Desc,

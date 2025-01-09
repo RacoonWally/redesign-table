@@ -17,11 +17,14 @@
 // export function useFilters({ updateFilters, onSortingOrderChange }: Props): Data {
 //     const [filteredInfo, setFilteredInfo] = useState<Record<string, FilterValue | null>>({});
 //
-//     async function onFiltersChange(filters: Record<string, FilterValue | null>): Promise<void> {
+// const onFiltersChange = useCallback(
+//     async (filters: Record<string, FilterValue | null>): Promise<void> => {
 //         const query = parseParamsToQuery(filters);
 //         setFilteredInfo(removeNilAndEmptyKeys(filters));
 //         await updateFilters(query);
-//     }
+//     },
+//     [updateFilters]
+// );
 //
 //     const onTableChange: TableProps<PatientReservationTableData>['onChange'] = (
 //         pagination,

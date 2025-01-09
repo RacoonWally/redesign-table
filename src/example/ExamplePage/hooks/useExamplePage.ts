@@ -45,13 +45,13 @@
 //         return record.status === EntryStatus.Archive;
 //     }
 //
-//     function onRow(record: EntryListParams): RowHandlers {
+//     const onRow = useCallback((record: EntryListParams): RowHandlers => {
 //         return {
 //             onClick: (e: React.MouseEvent) => onEntryClick(record, e),
 //         };
-//     }
+//     })
 //
-//     function onEntryClick(record: EntryListParams, event: React.MouseEvent): void {
+//     const onEntryClick = useCallback((record: EntryListParams, event: React.MouseEvent): void => {
 //         const url = `/patient/${ehr.recordId}/entry/${record.serialNumber}`;
 //
 //         if (isCtrlOrMetaClick(event)) {
@@ -59,7 +59,7 @@
 //         } else {
 //             navigate(url);
 //         }
-//     }
+//     })
 //
 //     return {
 //         data,

@@ -1,3 +1,5 @@
+// import { useCallback, useEffect } from 'react';
+//
 // interface LoaderProps extends EntryListQuery {
 //     relationOptions?: RelationOptions;
 // }
@@ -25,35 +27,39 @@
 //             await load();
 //             app.setIsOnUpdate(false);
 //         })();
-//     }, []);
+//     }, [app, params, load]);
 //
-//     async function load(): Promise<void> {
+//     const load = useCallback(async (): Promise<void> => {
 //         await entriesListService.load({
 //             entryList,
 //             relationOptions,
 //         });
-//     }
+//     }, [entryList, relationOptions]);
 //
-//     async function updateFilters(params: EntryListQuery): Promise<void> {
+//     const updateFilters = useCallback(async (params: EntryListQuery): Promise<void> => {
 //         const sortingOrder = params.sortingOrder ?? SortingOrder.Desc;
-//         await entriesListService.load({ entryList, queryParams: { ...params, sortingOrder }, relationOptions });
-//     }
+//         await entriesListService.load({
+//             entryList,
+//             queryParams: { ...params, sortingOrder },
+//             relationOptions,
+//         });
+//     }, [entryList, relationOptions]);
 //
-//     async function loadMore(): Promise<void> {
+//     const loadMore = useCallback(async (): Promise<void> => {
 //         await entriesListService.loadMore({ entryList, relationOptions });
-//     }
+//     }, [entryList, relationOptions]);
 //
-//     async function onSortingOrderChange(order: SortingOrder): Promise<void> {
+//     const onSortingOrderChange = useCallback(async (order: SortingOrder): Promise<void> => {
 //         await entriesListService.changeSortingOrder({ entryList, relationOptions }, order);
-//     }
+//     }, [entryList, relationOptions]);
 //
-//     async function changeStatus(id: string, status: EntryStatus): Promise<void> {
+//     const changeStatus = useCallback(async (id: string, status: EntryStatus): Promise<void> => {
 //         await entriesListService.updateEntryStatus(id, status, entryList);
-//     }
+//     }, [entryList]);
 //
-//     async function deleteEntry(id: string): Promise<void> {
+//     const deleteEntry = useCallback(async (id: string): Promise<void> => {
 //         await entriesListService.removeEntry(id, entryList);
-//     }
+//     }, [entryList]);
 //
 //     return {
 //         loadMore,

@@ -8,95 +8,92 @@
 // }
 //
 // export function useEntryMobileCard(): Data {
-//     const mobileFields: MobileField[] = useMemo(
-//         () => [
-//             {
-//                 title: translate('title'),
-//                 accessor: 'entryTypeTitle',
-//                 isPrimary: true,
-//                 withoutTitle: true,
-//                 fieldType: FieldTypes.Text,
-//             },
-//             {
-//                 title: translate('author'),
-//                 accessor: 'author',
-//                 fieldType: FieldTypes.Text,
-//             },
-//             {
-//                 title: translate('visitDate'),
-//                 accessor: 'visitTime',
-//                 fieldType: FieldTypes.Text,
-//             },
-//             {
-//                 title: translate('status'),
-//                 accessor: 'statusIcon',
-//                 fieldType: FieldTypes.StatusIcon,
-//             },
-//             {
-//                 title: '№',
-//                 accessor: 'indexNumber',
-//                 hide: true,
-//                 fieldType: FieldTypes.Text,
-//             },
-//             {
-//                 title: translate('type'),
-//                 accessor: 'entryTypeType',
-//                 hide: true,
-//                 fieldType: FieldTypes.Text,
-//             },
-//             {
-//                 title: 'serialNumber',
-//                 accessor: 'serialNumber',
-//                 hide: true,
-//                 fieldType: FieldTypes.Text,
-//             },
-//             {
-//                 title: 'id',
-//                 accessor: 'id',
-//                 hide: true,
-//                 fieldType: FieldTypes.Text,
-//             },
-//             {
-//                 title: 'ehrId',
-//                 accessor: 'ehrId',
-//                 hide: true,
-//                 fieldType: FieldTypes.Text,
-//             },
-//             {
-//                 title: translate('idAndEpisode'),
-//                 accessor: 'medicalCaseIdsAndNames',
-//                 hide: true,
-//                 fieldType: FieldTypes.Text,
-//             },
-//             {
-//                 title: translate('patient'),
-//                 accessor: 'patientName',
-//                 hide: true,
-//                 fieldType: FieldTypes.Text,
-//             },
-//             {
-//                 title: translate('clinic'),
-//                 accessor: 'organization',
-//                 hide: true,
-//                 fieldType: FieldTypes.Text,
-//             },
-//             {
-//                 title: 'status',
-//                 accessor: 'status',
-//                 hide: true,
-//                 fieldType: FieldTypes.Text,
-//             },
-//             {
-//                 title: translate('status'),
-//                 accessor: 'statusTitle',
-//                 hide: true,
-//                 fieldType: FieldTypes.Text,
-//             },
-//         ],
-//         [],
-//     );
+//     const mobileFields: MobileField[] = [
+//         {
+//             title: translate('title'),
+//             accessor: 'entryTypeTitle',
+//             isPrimary: true,
+//             withoutTitle: true,
+//             fieldType: FieldTypes.Text,
+//         },
+//         {
+//             title: translate('author'),
+//             accessor: 'author',
+//             fieldType: FieldTypes.Text,
+//         },
+//         {
+//             title: translate('visitDate'),
+//             accessor: 'visitTime',
+//             fieldType: FieldTypes.Text,
+//         },
+//         {
+//             title: translate('status'),
+//             accessor: 'statusIcon',
+//             fieldType: FieldTypes.StatusIcon,
+//         },
+//         {
+//             title: '№',
+//             accessor: 'indexNumber',
+//             hide: true,
+//             fieldType: FieldTypes.Text,
+//         },
+//         {
+//             title: translate('type'),
+//             accessor: 'entryTypeType',
+//             hide: true,
+//             fieldType: FieldTypes.Text,
+//         },
+//         {
+//             title: 'serialNumber',
+//             accessor: 'serialNumber',
+//             hide: true,
+//             fieldType: FieldTypes.Text,
+//         },
+//         {
+//             title: 'id',
+//             accessor: 'id',
+//             hide: true,
+//             fieldType: FieldTypes.Text,
+//         },
+//         {
+//             title: 'ehrId',
+//             accessor: 'ehrId',
+//             hide: true,
+//             fieldType: FieldTypes.Text,
+//         },
+//         {
+//             title: translate('idAndEpisode'),
+//             accessor: 'medicalCaseIdsAndNames',
+//             hide: true,
+//             fieldType: FieldTypes.Text,
+//         },
+//         {
+//             title: translate('patient'),
+//             accessor: 'patientName',
+//             hide: true,
+//             fieldType: FieldTypes.Text,
+//         },
+//         {
+//             title: translate('clinic'),
+//             accessor: 'organization',
+//             hide: true,
+//             fieldType: FieldTypes.Text,
+//         },
+//         {
+//             title: 'status',
+//             accessor: 'status',
+//             hide: true,
+//             fieldType: FieldTypes.Text,
+//         },
+//         {
+//             title: translate('status'),
+//             accessor: 'statusTitle',
+//             hide: true,
+//             fieldType: FieldTypes.Text,
+//         },
+//     ];
 //
-//     function makeTableData(): EntryTableData[] {
+//     const tableData = useMemo(() => {
 //         const {
 //             entryListStore: { entryList },
 //             ehr: { medicalCases },
@@ -145,10 +142,10 @@
 //                 }),
 //             };
 //         });
-//     }
+//     }, []);
 //
 //     return {
 //         mobileFields,
-//         tableData: makeTableData(),
+//         tableData,
 //     };
 // }

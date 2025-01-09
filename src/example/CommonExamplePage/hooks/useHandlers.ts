@@ -1,5 +1,4 @@
-// import React from 'react';
-// import { EntryStatus } from 'chaika-enums';
+// import { useCallback } from 'react';
 //
 // interface UseHandlersProps {
 //     data: EntryListParams & EntryTableData;
@@ -22,20 +21,20 @@
 //     const tCancel = translate('cancel');
 //     const tAreYouSure = translate('areYouSure');
 //
-//     async function onChangeStatus(): Promise<void> {
+//     const onChangeStatus = useCallback(async (): Promise<void> => {
 //         const newStatus = data.status === EntryStatus.Draft ? EntryStatus.Archive : EntryStatus.Draft;
 //         await onChangeStatusPopup(data.id, newStatus);
-//     }
+//     }, [data.id, data.status, onChangeStatusPopup]);
 //
-//     function onSubmit(event: React.MouseEvent): void {
+//     const onSubmit = useCallback((event: React.MouseEvent): void => {
 //         onSubmitPopup(data.serialNumber, event);
-//     }
+//     }, [data.serialNumber, onSubmitPopup]);
 //
-//     function onCancel(event: React.MouseEvent): void {
+//     const onCancel = useCallback((event: React.MouseEvent): void => {
 //         onCancelPopup(event);
-//     }
+//     }, [onCancelPopup]);
 //
-//     function onDelete(event: React.MouseEvent): void {
+//     const onDelete = useCallback((event: React.MouseEvent): void => {
 //         app.showConfirmPopup({
 //             description: tAreYouSure,
 //             confirmText: tDelete,
@@ -45,12 +44,12 @@
 //             onClose: () => app.showConfirmPopup(null),
 //             onCancel: () => app.showConfirmPopup(null),
 //         });
-//     }
+//     }, [app, tAreYouSure, tDelete, tCancel, onConfirm]);
 //
-//     async function onConfirm(event: React.MouseEvent): Promise<void> {
+//     const onConfirm = useCallback(async (event: React.MouseEvent): Promise<void> => {
 //         app.showConfirmPopup(null);
 //         await onDeletePopup(data, event);
-//     }
+//     }, [app, onDeletePopup, data]);
 //
 //     return {
 //         onSubmit,
